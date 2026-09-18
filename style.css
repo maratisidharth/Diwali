@@ -1,0 +1,1159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: sborder-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #190005;
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   TOP DECORATIVE LIGHTS
+========================================= */
+
+.top-lights {
+    height: 35px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: #090004;
+}
+
+.top-lights span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+
+    background: #ffd700;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 20px #ff8c00;
+
+    animation: lightGlow 1.5s infinite alternate;
+}
+
+.top-lights span:nth-child(2n) {
+    animation-delay: .4s;
+}
+
+.top-lights span:nth-child(3n) {
+    animation-delay: .8s;
+}
+
+@keyframes lightGlow {
+
+    from {
+        opacity: .4;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+}
+
+
+/* =========================================
+   FLOWER GARLAND
+========================================= */
+
+.garland {
+    position: fixed;
+    top: 34px;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    z-index: 999;
+
+    text-align: center;
+    font-size: 22px;
+
+    background: #3c0009;
+
+    word-spacing: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.6);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 69px;
+    z-index: 900;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 7%;
+
+    background: rgba(45, 0, 7, .95);
+
+    border-bottom: 1px solid rgba(255,215,0,.4);
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 35px;
+}
+
+.logo h2 {
+    font-family: "Cinzel", serif;
+    color: #ffd700;
+    font-size: 20px;
+}
+
+.logo small {
+    color: #ffb347;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: white;
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: #ffd700;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 90vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center,
+        #6c0012 0%,
+        #32000b 45%,
+        #100004 100%);
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,193,7,.18),
+        transparent 70%
+    );
+
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        transform: scale(.9);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    max-width: 900px;
+
+    padding: 50px 20px;
+}
+
+.diya {
+    font-size: 75px;
+
+    filter:
+        drop-shadow(0 0 15px #ffb300)
+        drop-shadow(0 0 30px #ff6f00);
+
+    animation: diyaGlow 1.8s infinite alternate;
+}
+
+@keyframes diyaGlow {
+
+    from {
+        transform: scale(.95);
+        filter:
+            drop-shadow(0 0 8px #ffb300);
+    }
+
+    to {
+        transform: scale(1.08);
+        filter:
+            drop-shadow(0 0 30px #ffd700);
+    }
+
+}
+
+.welcome {
+    color: #ffd700;
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.hero h1 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(42px, 7vw, 85px);
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 10px rgba(255,215,0,.7),
+        0 0 30px rgba(255,100,0,.4);
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #fff;
+
+    font-size: .55em;
+
+    letter-spacing: 5px;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 4vw, 38px);
+
+    color: #ffcf70;
+
+    margin: 20px 0;
+}
+
+.hero-text {
+    font-size: 17px;
+    color: #ffe9b0;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    color: #4a0008;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #ffd700,
+        #ff8c00
+    );
+
+    box-shadow:
+        0 0 15px rgba(255,174,0,.5);
+
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 10px 30px rgba(255,174,0,.6);
+}
+
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+.sparkle {
+    position: absolute;
+
+    color: #ffd700;
+
+    font-size: 35px;
+
+    animation: sparkle 2s infinite alternate;
+}
+
+.s1 {
+    top: 20%;
+    left: 12%;
+}
+
+.s2 {
+    top: 35%;
+    right: 15%;
+}
+
+.s3 {
+    bottom: 20%;
+    left: 20%;
+}
+
+.s4 {
+    top: 15%;
+    right: 35%;
+}
+
+.s5 {
+    bottom: 25%;
+    right: 20%;
+}
+
+@keyframes sparkle {
+
+    from {
+        opacity: .2;
+        transform: scale(.5) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4) rotate(180deg);
+    }
+
+}
+
+
+/* =========================================
+   FIREWORKS
+========================================= */
+
+.firework {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffd700;
+
+    box-shadow:
+        0 -80px #ffd700,
+        0 80px #ffd700,
+        80px 0 #ff8c00,
+        -80px 0 #ff8c00,
+        55px 55px #ff4500,
+        -55px -55px #ff4500,
+        55px -55px #ffd700,
+        -55px 55px #ffd700;
+
+    animation: firework 3s infinite;
+}
+
+.firework1 {
+    top: 25%;
+    left: 15%;
+}
+
+.firework2 {
+    top: 28%;
+    right: 15%;
+
+    transform: scale(.7);
+    animation-delay: 1s;
+}
+
+@keyframes firework {
+
+    0% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   CORNER DIYAS
+========================================= */
+
+.corner-diya {
+    position: absolute;
+
+    bottom: 30px;
+
+    font-size: 55px;
+
+    filter:
+        drop-shadow(0 0 15px #ff9800);
+}
+
+.left-diya {
+    left: 7%;
+}
+
+.right-diya {
+    right: 7%;
+}
+
+
+/* =========================================
+   FESTIVAL BANNER
+========================================= */
+
+.festival-banner {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6f00,
+            #9b0016,
+            #ff6f00
+        );
+
+    border-top: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+}
+
+.festival-banner h2 {
+    font-family: "Cinzel", serif;
+    color: #fff4bd;
+
+    font-size: clamp(22px, 4vw, 38px);
+}
+
+.festival-banner p {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.rangoli {
+    font-size: 45px;
+    color: #ffd700;
+
+    animation: rotateRangoli 8s linear infinite;
+}
+
+@keyframes rotateRangoli {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   COMBOS
+========================================= */
+
+.combos {
+    padding: 100px 7%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #4d0010,
+            #190005 70%
+        );
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading span {
+    font-size: 35px;
+}
+
+.section-heading p {
+    color: #ffb300;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+}
+
+.section-heading h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(30px, 5vw, 50px);
+
+    color: #ffd700;
+
+    margin-top: 8px;
+}
+
+.heading-line {
+    width: 100px;
+    height: 3px;
+
+    margin: 15px auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        transparent
+    );
+}
+
+
+/* =========================================
+   COMBO CARDS
+========================================= */
+
+.combo-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.combo-card {
+    position: relative;
+
+    padding: 45px 30px 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,215,0,.5);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(111,0,20,.9),
+            rgba(39,0,8,.95)
+        );
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.5);
+
+    transition: .4s;
+}
+
+.combo-card:hover {
+    transform: translateY(-15px);
+
+    box-shadow:
+        0 20px 50px rgba(255,128,0,.25);
+}
+
+.combo-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+
+    top: -100px;
+    right: -100px;
+
+    background: rgba(255,215,0,.08);
+}
+
+.card-decoration {
+    position: absolute;
+
+    top: 15px;
+    left: 20px;
+
+    color: #ffd700;
+
+    font-size: 25px;
+}
+
+.combo-icon {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(0 0 12px #ff8c00);
+}
+
+.combo-label {
+    color: #ffb300;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+.combo-card h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 55px;
+
+    color: #ffd700;
+
+    margin: 8px 0;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.4);
+}
+
+.price-line {
+    width: 70px;
+    height: 2px;
+
+    margin: 10px auto 20px;
+
+    background: #ff8c00;
+}
+
+.combo-card h4 {
+    color: white;
+
+    font-size: 19px;
+
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #e5cfcf;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    min-height: 75px;
+}
+
+.order-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd700,
+        #ff8c00
+    );
+
+    color: #450007;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.order-btn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(255,193,7,.6);
+}
+
+.card-diya {
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    opacity: .9;
+}
+
+
+/* =========================================
+   POPULAR CARD
+========================================= */
+
+.family {
+    border: 2px solid #ffd700;
+
+    transform: translateY(-10px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #710015,
+            #330009
+        );
+}
+
+.family:hover {
+    transform: translateY(-20px);
+}
+
+.popular {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 7px 22px;
+
+    background: #ffd700;
+
+    color: #500009;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+/* =========================================
+   GRAND CARD
+========================================= */
+
+.grand {
+    border: 2px solid #ff8c00;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8c0018,
+            #3d0009
+        );
+}
+
+.grand-badge {
+    display: inline-block;
+
+    padding: 6px 15px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd700,
+        #ff8c00
+    );
+
+    color: #4d0008;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 80px;
+
+    padding: 90px 10%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #300008,
+            #60000f
+        );
+
+    border-top: 1px solid rgba(255,215,0,.4);
+}
+
+.about-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #ffd700;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+.about h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 42px;
+
+    color: #ffd700;
+
+    margin: 15px 0;
+}
+
+.about p {
+    color: #ead4d4;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+.about-diya {
+    font-size: 130px;
+
+    filter:
+        drop-shadow(0 0 30px #ff8c00);
+
+    animation: diyaGlow 1.8s infinite alternate;
+}
+
+.about-decoration {
+    position: absolute;
+
+    top: 20px;
+    left: 5%;
+
+    font-size: 35px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    padding: 90px 7%;
+
+    background: #160004;
+}
+
+.contact-box {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.contact-box > div {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background: #2e0009;
+
+    border: 1px solid rgba(255,215,0,.25);
+
+    transition: .3s;
+}
+
+.contact-box > div:hover {
+    transform: translateY(-8px);
+
+    border-color: #ffd700;
+}
+
+.contact-box span {
+    font-size: 35px;
+}
+
+.contact-box h3 {
+    color: #ffd700;
+
+    margin: 10px 0;
+}
+
+.contact-box p {
+    color: #d9bebe;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: #090002;
+
+    border-top: 1px solid rgba(255,215,0,.4);
+}
+
+.footer-diyas {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+footer h2 {
+    font-family: "Cinzel", serif;
+
+    color: #ffd700;
+
+    font-size: 25px;
+}
+
+footer p {
+    color: #d5a7a7;
+
+    margin: 10px 0;
+}
+
+.footer-line {
+    width: 150px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: #ffd700;
+}
+
+footer small {
+    color: #866b6b;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .combo-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .family {
+        transform: none;
+    }
+
+    .family:hover {
+        transform: translateY(-15px);
+    }
+
+    .about {
+        text-align: center;
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .garland {
+        font-size: 16px;
+        word-spacing: 5px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+
+        top: 69px;
+    }
+
+    .navbar nav {
+        gap: 12px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero-content {
+        padding-top: 60px;
+    }
+
+    .diya {
+        font-size: 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .corner-diya {
+        font-size: 40px;
+    }
+
+    .festival-banner {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .rangoli {
+        font-size: 30px;
+    }
+
+    .combos {
+        padding: 70px 5%;
+    }
+
+    .combo-card {
+        padding: 40px 22px;
+    }
+
+    .combo-card h3 {
+        font-size: 48px;
+    }
+
+    .about {
+        padding: 70px 7%;
+    }
+
+    .about h2 {
+        font-size: 32px;
+    }
+
+}
