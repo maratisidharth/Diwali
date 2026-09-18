@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const whatsappButtons = document.querySelectorAll(".whatsapp-btn");
 
 
-    const whatsappNumber = "6302898225";
+    const whatsappNumber = "9493982659";
 
     whatsappButtons.forEach(function (button) {
 
